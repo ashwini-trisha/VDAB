@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+
+    <pre class="mermaid">
+    </pre>
+    <script type="module">
+         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+         var myVariable = `graph TB
+           a-->b`;
+        
+        // Access the content container element
+        var contentContainer = document.getElementById("#mermiad");
+        
+        // Create a <pre> element
+        var preElement = document.createElement("pre");
+        
+        // Set the text content of the <pre> element to the value of the variable
+        preElement.textContent= myVariable;
+        
+        // Append the <pre> element to the content container
+        contentContainer.appendChild(preElement);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+digraph {
+	node [fillcolor=lightblue fontname=Arial shape=rectangle style=filled]
+	edge [fontname=Arial]
+	Start [label=Start]
+	PrepareData [label="Prepare data for modeling"]
+	SplitData [label="Split data into training and testing sets"]
+	TrainModel [label="Train machine learning models"]
+	EvaluateModel [label="Evaluate model performance on test set"]
+	DeployModel [label="Deploy best-performing model into production"]
+	MonitorModel [label="Monitor model performance and retrain if necessary"]
+	End [label=End]
+	Start -> PrepareData
+	PrepareData -> SplitData
+	SplitData -> TrainModel
+	TrainModel -> EvaluateModel
+	EvaluateModel -> DeployModel
+	DeployModel -> MonitorModel
+	MonitorModel -> TrainModel
+	TrainModel -> DeployModel
+	DeployModel -> End
+}

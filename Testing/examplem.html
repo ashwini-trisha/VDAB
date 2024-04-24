@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid Diagram</title>
+</head>
+<body>
+    <h1>hello</h1>
+    <div class="mermaid" id="graphDiv"></div>
+    
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: false });
+        
+        // Example of using the render function
+        const drawDiagram = async function () {
+            const element = document.querySelector('#graphDiv');
+            const graphDefinition = `graph TB 
+               a-->b`;
+            const { svg } = await mermaid.render('graphDiv', graphDefinition);
+            element.innerHTML = svg;
+        };
+        
+        drawDiagram();
+    </script>
+</body>
+</html>
